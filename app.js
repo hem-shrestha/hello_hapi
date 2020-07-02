@@ -3,7 +3,7 @@ const Hapi   = require('hapi');
 const Server = new Hapi.Server();
 const Hello  = require('./lib/hello');
 
-Server.connection({ port: 8080 });
+Server.connection({ port: process.env.PORT || 8080 });
 
 Server.route({
     method: 'GET',
